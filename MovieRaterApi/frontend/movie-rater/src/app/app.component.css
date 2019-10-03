@@ -1,0 +1,10 @@
+.app{
+    background-color: rgb(241, 241, 210);
+    color: black;
+    height: calc(100vh - 100px);
+    padding: 50px;
+}
+
+h1{
+    text-align: center;
+}
