@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { ApiService } from './../../api.service';
+
+
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-movie-details',
@@ -7,9 +10,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MovieDetailsComponent implements OnInit {
 
-  constructor() { }
+  @Input() movie;
+  rateHovered=0;
+  constructor(private apiService: ApiService) { }
 
   ngOnInit() {
+  }
+  rateHover(rate){
+    this.rateHovered=rate
+  }
+  rateClicked(rate){
+    this.apiService(rate, this.movie.id).subscribe(
+      result =>{
+        console.log(result);
+      },
+      error =>console.log(error)
+    )
   }
 
 }

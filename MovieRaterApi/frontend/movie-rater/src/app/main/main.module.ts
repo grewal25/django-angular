@@ -1,5 +1,5 @@
 import { ApiService } from './../api.service';
-
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MainComponent } from './main.component';
@@ -24,7 +24,8 @@ const routes: Routes=[
   ],
   imports: [
     CommonModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    AngularFontAwesomeModule
   ],
   exports: [
     RouterModule
